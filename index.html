@@ -21,11 +21,16 @@
   <nav class="bg-white shadow">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <div class="text-xl font-bold text-gray-800">Minimalist App</div>
-      <div>
+      <div class="flex items-center">
         <a href="#" class="text-gray-600 hover:text-gray-800 mx-4" id="navHome">Home</a>
         <a href="https://medium.com/@cem3_21762/app-update-progress-and-whats-coming-next-264f2b81ed0d" target="_blank" class="text-gray-600 hover:text-gray-800 mx-4" id="navBlog">Blog</a>
-        <!-- Sprachumschalt-Button -->
-        <button id="toggleLang" class="text-gray-600 hover:text-gray-800 mx-4">Deutsch</button>
+        <!-- Sprachumschaltung per Flaggen -->
+        <a href="#" id="lang-en" class="mx-2">
+          <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="English" class="w-6 h-6 cursor-pointer" />
+        </a>
+        <a href="#" id="lang-de" class="mx-2">
+          <img src="https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg" alt="Deutsch" class="w-6 h-6 cursor-pointer" />
+        </a>
       </div>
     </div>
   </nav>
@@ -41,12 +46,12 @@
         <p id="description" class="text-lg text-gray-600 mt-4">
           The smart solution to embrace minimalism and live more mindfully.
         </p>
-        <!-- Get Started als Link, der zum Formular scrollt -->
+        <!-- Get Started als Link, der zur Formularsektion scrollt -->
         <a href="#signup" id="getStartedBtn" class="inline-block mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700">
           Get Started
         </a>
       </div>
-      <!-- Right: Bild -->
+      <!-- Right: Erstes Bild -->
       <div class="md:w-1/2 flex justify-center">
         <img src="Simulator Screenshot - iPhone 16 Pro - 2025-02-23 at 11.28.04-left.png" 
              alt="App Mockup" class="w-full max-w-sm md:w-[93%] h-auto" />
@@ -89,8 +94,8 @@
 
   <!-- Call to Action Section -->
   <section id="signup" class="py-20 bg-blue-600 text-white text-center">
-    <h2 id="ctaHeading" class="text-3xl font-bold">Join the Beta!</h2>
-    <p id="ctaText" class="mt-4">Sign up and be the first to experience our app.</p>
+    <h2 id="ctaHeading" class="text-3xl font-bold">Beta Coming Soon!</h2>
+    <p id="ctaText" class="mt-4">Join our waitlist and be notified as soon as the beta is available.</p>
     <form action="https://formspree.io/f/meoewepq" method="POST" class="mt-6 flex flex-col items-center max-w-md mx-auto px-4">
       <input type="email" name="email" placeholder="Your Email" class="p-3 w-full rounded-lg text-gray-800 mb-4" required>
       <button type="submit" class="w-full px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-200">
@@ -113,7 +118,6 @@
       en: {
         navHome: "Home",
         navBlog: "Blog",
-        toggleLang: "Deutsch",
         welcomeTitle: "Welcome to <span class=\"bg-black text-white px-1 py-0.5 rounded\">Minimalist</span> App",
         description: "The smart solution to embrace minimalism and live more mindfully.",
         getStartedBtn: "Get Started",
@@ -128,15 +132,14 @@
         feature4: "Easy decision-making: confirm usage or remove unused items.",
         feature5: "Filter and sort items by category and usage status.",
         feature6: "Database-backed tracking with dynamically updated reminder intervals.",
-        ctaHeading: "Join the Beta!",
-        ctaText: "Sign up and be the first to experience our app.",
+        ctaHeading: "Beta Coming Soon!",
+        ctaText: "Join our waitlist and be notified as soon as the beta is available.",
         footerText: "&copy; 2025 Minimalist App. All rights reserved. | ",
         footerBlog: "Blog"
       },
       de: {
         navHome: "Startseite",
         navBlog: "Blog",
-        toggleLang: "English",
         welcomeTitle: "Willkommen bei <span class=\"bg-black text-white px-1 py-0.5 rounded\">Minimalist</span> App",
         description: "Die clevere Lösung, um Minimalismus zu leben und bewusster zu leben.",
         getStartedBtn: "Los geht's",
@@ -151,41 +154,47 @@
         feature4: "Einfache Entscheidungsfindung: Nutzung bestätigen oder nicht genutzte Items entfernen.",
         feature5: "Filter und Sortierung von Items nach Kategorie und Status.",
         feature6: "Datenbankgestützte Verfolgung mit dynamisch aktualisierten Erinnerungsintervallen.",
-        ctaHeading: "Tritt der Beta bei!",
-        ctaText: "Melde dich an und sei der Erste, der unsere App erlebt.",
+        ctaHeading: "Beta demnächst!",
+        ctaText: "Melde dich an, um informiert zu werden, sobald die Beta verfügbar ist und sichere dir einen Platz auf der Warteliste.",
         footerText: "&copy; 2025 Minimalist App. Alle Rechte vorbehalten. | ",
         footerBlog: "Blog"
       }
     };
 
-    let currentLang = 'en';
-
-    function toggleLanguage() {
-      currentLang = currentLang === 'en' ? 'de' : 'en';
-      document.getElementById('navHome').innerText = translations[currentLang].navHome;
-      document.getElementById('navBlog').innerText = translations[currentLang].navBlog;
-      document.getElementById('toggleLang').innerText = translations[currentLang].toggleLang;
-      document.getElementById('welcomeTitle').innerHTML = translations[currentLang].welcomeTitle;
-      document.getElementById('description').innerText = translations[currentLang].description;
-      document.getElementById('getStartedBtn').innerText = translations[currentLang].getStartedBtn;
-      document.getElementById('featuresHeading').innerText = translations[currentLang].featuresHeading;
-      document.getElementById('featuresListHeading').innerText = translations[currentLang].featuresListHeading;
-      document.getElementById('feature1').innerText = translations[currentLang].feature1;
-      document.getElementById('feature2Title').innerText = translations[currentLang].feature2Title;
-      document.getElementById('feature2_1').innerHTML = translations[currentLang].feature2_1;
-      document.getElementById('feature2_2').innerHTML = translations[currentLang].feature2_2;
-      document.getElementById('feature2_3').innerHTML = translations[currentLang].feature2_3;
-      document.getElementById('feature3').innerText = translations[currentLang].feature3;
-      document.getElementById('feature4').innerText = translations[currentLang].feature4;
-      document.getElementById('feature5').innerText = translations[currentLang].feature5;
-      document.getElementById('feature6').innerText = translations[currentLang].feature6;
-      document.getElementById('ctaHeading').innerText = translations[currentLang].ctaHeading;
-      document.getElementById('ctaText').innerText = translations[currentLang].ctaText;
-      document.getElementById('footerText').innerHTML = translations[currentLang].footerText;
-      document.getElementById('footerBlog').innerText = translations[currentLang].footerBlog;
+    function setLanguage(lang) {
+      document.getElementById('navHome').innerText = translations[lang].navHome;
+      document.getElementById('navBlog').innerText = translations[lang].navBlog;
+      document.getElementById('welcomeTitle').innerHTML = translations[lang].welcomeTitle;
+      document.getElementById('description').innerText = translations[lang].description;
+      document.getElementById('getStartedBtn').innerText = translations[lang].getStartedBtn;
+      document.getElementById('featuresHeading').innerText = translations[lang].featuresHeading;
+      document.getElementById('featuresListHeading').innerText = translations[lang].featuresListHeading;
+      document.getElementById('feature1').innerText = translations[lang].feature1;
+      document.getElementById('feature2Title').innerText = translations[lang].feature2Title;
+      document.getElementById('feature2_1').innerHTML = translations[lang].feature2_1;
+      document.getElementById('feature2_2').innerHTML = translations[lang].feature2_2;
+      document.getElementById('feature2_3').innerHTML = translations[lang].feature2_3;
+      document.getElementById('feature3').innerText = translations[lang].feature3;
+      document.getElementById('feature4').innerText = translations[lang].feature4;
+      document.getElementById('feature5').innerText = translations[lang].feature5;
+      document.getElementById('feature6').innerText = translations[lang].feature6;
+      document.getElementById('ctaHeading').innerText = translations[lang].ctaHeading;
+      document.getElementById('ctaText').innerText = translations[lang].ctaText;
+      document.getElementById('footerText').innerHTML = translations[lang].footerText;
+      document.getElementById('footerBlog').innerText = translations[lang].footerBlog;
     }
 
-    document.getElementById('toggleLang').addEventListener('click', toggleLanguage);
+    document.getElementById('lang-en').addEventListener('click', function(e) {
+      e.preventDefault();
+      setLanguage('en');
+    });
+    document.getElementById('lang-de').addEventListener('click', function(e) {
+      e.preventDefault();
+      setLanguage('de');
+    });
+
+    // Standardmäßig Englisch setzen
+    setLanguage('en');
   </script>
 </body>
 </html>
