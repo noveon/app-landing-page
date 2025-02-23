@@ -19,18 +19,22 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="h-screen flex flex-col items-center justify-center text-center p-6">
-    <h1 class="text-4xl font-bold text-gray-800">Welcome to Minimalist App</h1>
-    <p class="text-lg text-gray-600 mt-4">
-      The smart solution to embrace minimalism and live more mindfully.
-    </p>
-    <!-- First Image Next to Welcome Text -->
-    <div class="mt-6 flex justify-center">
-      <img src="Simulator Screenshot - iPhone 16 Pro - 2025-02-23 at 11.28.04-left.png" alt="App Mockup" class="w-64 h-96 rounded-lg shadow-lg" />
+  <section class="h-screen flex items-center justify-center text-center p-6">
+    <div class="flex flex-col items-center md:flex-row justify-between w-full">
+      <div class="md:w-1/2 text-center md:text-left">
+        <h1 class="text-4xl font-bold text-gray-800">Welcome to Minimalist App</h1>
+        <p class="text-lg text-gray-600 mt-4">
+          The smart solution to embrace minimalism and live more mindfully.
+        </p>
+        <button class="mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700">
+          Get Started
+        </button>
+      </div>
+      <!-- First Image Next to Welcome Text -->
+      <div class="md:w-1/2 mt-6 md:mt-0 flex justify-center">
+        <img src="Simulator Screenshot - iPhone 16 Pro - 2025-02-23 at 11.28.04-left.png" alt="App Mockup" class="max-w-full h-auto rounded-lg shadow-lg" />
+      </div>
     </div>
-    <button class="mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700">
-      Get Started
-    </button>
   </section>
 
   <!-- App Mockup & Features Section -->
@@ -40,7 +44,7 @@
       <div class="mt-10 flex flex-col md:flex-row items-center">
         <!-- Second Image Next to Features List -->
         <div class="md:w-1/2 flex justify-center">
-          <img src="Simulator Screenshot - iPhone 16 Pro - 2025-02-23 at 11.28.04-portrait.png" alt="App Mockup" class="w-64 h-96 rounded-lg shadow-lg" />
+          <img src="Simulator Screenshot - iPhone 16 Pro - 2025-02-23 at 11.28.04-portrait.png" alt="App Mockup" class="max-w-full h-auto rounded-lg shadow-lg" />
         </div>
         <!-- Features List -->
         <div class="md:w-1/2 mt-10 md:mt-0 md:pl-10">
@@ -89,9 +93,8 @@
           <li>
             <strong>Automatic Flagging:</strong> At 100 days of non-use, the item is flagged for removal with a final prompt.
           </li>
-          <li>
-            <strong>Inventory Overview:</strong> Items are color-coded (green, yellow, red) based on usage, with filtering options to help you focus on what matters.
-          </li>
+          <strong>Inventory Overview:</strong>
+          <li>Items are color-coded (green, yellow, red) based on usage, with filtering options to help you focus on what matters.</li>
         </ul>
         <p class="mt-4">
           This system ensures you maintain a minimalist lifestyle by retaining only the items that are truly essential.
