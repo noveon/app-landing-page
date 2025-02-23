@@ -1,96 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minimalist App</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-100">
-  <!-- Navigation -->
-  <nav class="bg-white shadow">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="text-xl font-bold text-gray-800">Minimalist App</div>
-      <div>
-        <a href="#" class="text-gray-600 hover:text-gray-800 mx-4">Home</a>
-        <a href="#" class="text-gray-600 hover:text-gray-800 mx-4">Blog</a>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Hero Section -->
-  <section class="h-screen flex items-center justify-center p-6">
-    <div class="flex flex-col md:flex-row items-center justify-center w-full max-w-5xl mx-auto">
-      <!-- Left: Text Content (zentriert) -->
-      <div class="md:w-1/2 text-center md:text-left">
+    <!-- Hero Section -->
+    <section class="h-screen flex flex-col items-center justify-center text-center p-6">
         <h1 class="text-4xl font-bold text-gray-800">Welcome to Minimalist App</h1>
-        <p class="text-lg text-gray-600 mt-4">
-          The smart solution to embrace minimalism and live more mindfully.
-        </p>
-        <!-- Get Started als Link, der zur Formularsektion scrollt -->
-        <a href="#signup" class="inline-block mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700">
-          Get Started
+        <p class="text-lg text-gray-600 mt-4">The smart solution to embrace minimalism and live more mindfully.</p>
+        
+        <!-- Button linking to Formspree -->
+        <a href="https://formspree.io/f/meoewepq" target="_blank">
+            <button class="mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700">
+                Get Started
+            </button>
         </a>
-      </div>
-      <!-- Right: Erstes Bild (40% größer als vorher, kein Rahmen, kein Schatten) -->
-      <div class="md:w-1/2 mt-6 md:mt-0 flex justify-center">
-        <img src="Simulator Screenshot - iPhone 16 Pro - 2025-02-23 at 11.28.04-left.png" 
-             alt="App Mockup" class="w-[93%] h-auto" />
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- App Mockup & Features Section -->
-  <section class="py-20 bg-white">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-gray-800 text-center">Discover Our App</h2>
-      <div class="mt-10 flex flex-col md:flex-row items-center max-w-5xl mx-auto">
-        <!-- Left: Zweites Bild (30% größer, kein Rahmen, kein Schatten) -->
-        <div class="md:w-1/2 flex justify-center">
-          <img src="Simulator Screenshot - iPhone 16 Pro - 2025-02-23 at 11.28.04-portrait.png" 
-               alt="App Mockup" class="w-2/3 h-auto" />
+    <!-- Features Section -->
+    <section class="py-20 bg-white text-center">
+        <h2 class="text-3xl font-bold text-gray-800">Features & Capabilities</h2>
+        <div class="flex flex-wrap justify-center mt-8 gap-6">
+            <div class="max-w-xs p-6 bg-gray-200 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold">Feature 1</h3>
+                <p class="text-gray-600 mt-2">Track usage of your items and make mindful decisions about what to keep.</p>
+            </div>
+            <div class="max-w-xs p-6 bg-gray-200 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold">Feature 2</h3>
+                <p class="text-gray-600 mt-2">Set reminders for items you haven't used recently and decide if they should stay.</p>
+            </div>
         </div>
-        <!-- Right: Features List -->
-        <div class="md:w-1/2 mt-10 md:mt-0 md:pl-10">
-          <h3 class="text-2xl font-semibold text-gray-800 mb-4">Features & Capabilities</h3>
-          <ul class="list-disc list-inside text-gray-600 space-y-2">
-            <li>Automatic 30-day reminders for item usage tracking.</li>
-            <li>
-              Inventory management with color-coded statuses:
-              <ul class="list-disc list-inside ml-4">
-                <li><span class="text-green-600">Green:</span> Regularly used items</li>
-                <li><span class="text-yellow-600">Yellow:</span> Items needing attention</li>
-                <li><span class="text-red-600">Red:</span> Items recommended for removal</li>
-              </ul>
-            </li>
-            <li>Push notifications at 30, 60, 90, and 100 days.</li>
-            <li>Easy decision-making: confirm usage or remove unused items.</li>
-            <li>Filter and sort items by category and usage status.</li>
-            <li>Database-backed tracking with dynamically updated reminder intervals.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Call to Action Section (Formspree-Formular) -->
-  <section id="signup" class="py-20 bg-blue-600 text-white text-center">
-    <h2 class="text-3xl font-bold">Join the Beta!</h2>
-    <p class="mt-4">Sign up and be the first to experience our app.</p>
-    <form action="https://formspree.io/f/meoewepq" method="POST" class="mt-6 flex justify-center flex-col items-center max-w-md mx-auto">
-      <input type="email" name="email" placeholder="Your Email" class="p-3 w-full rounded-lg text-gray-800 mb-4" required>
-      <button type="submit" class="w-full px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-200">
-        Sign Up
-      </button>
-    </form>
-  </section>
+    <!-- Blog Section -->
+    <section class="py-20 bg-gray-900 text-white text-center">
+        <h2 class="text-3xl font-bold">Check Out Our Blog</h2>
+        <p class="mt-4">Read the latest updates and insights about minimalism and our app development journey.</p>
+        
+        <!-- Blog Link to Medium -->
+        <a href="https://medium.com/p/264f2b81ed0d" target="_blank" class="mt-6 inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700">
+            Visit Blog
+        </a>
+    </section>
 
-  <!-- Footer -->
-  <footer class="py-6 bg-gray-900 text-center text-white">
-    <p>
-      &copy; 2025 Minimalist App. All rights reserved. | 
-      <a href="#" class="underline hover:text-gray-300">Blog</a>
-    </p>
-  </footer>
+    <!-- Footer -->
+    <footer class="py-6 bg-gray-900 text-center text-white">
+        <p>&copy; 2025 Minimalist App. All rights reserved.</p>
+    </footer>
+
 </body>
+
 </html>
