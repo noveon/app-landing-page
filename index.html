@@ -5,20 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minimalist App</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Keine zusätzlichen Listeneinstellungen mehr – normale Bullet-Points -->
+  <!-- Keine speziellen CSS-Regeln für Bullet Points – normale Listen -->
 </head>
 <body class="bg-gray-100">
   <!-- Navigation -->
   <nav class="bg-white shadow">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
       <div class="text-xl font-bold text-gray-800">Minimalist App</div>
-      <div class="flex items-center">
-        <a href="#" class="text-gray-600 hover:text-gray-800 mx-4" id="navHome">Home</a>
-        <a href="https://medium.com/@cem3_21762/app-update-progress-and-whats-coming-next-264f2b81ed0d" target="_blank" class="text-gray-600 hover:text-gray-800 mx-4" id="navBlog">Blog</a>
-        <!-- Sprachumschalt-Button: Es wird jeweils die Flagge der Zielsprache angezeigt -->
-        <a href="#" id="toggleLang" class="mx-4">
-          <!-- Standardmäßig ist die Website auf Englisch, also zeigen wir die deutsche Flagge -->
-          <img src="https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg" alt="Deutsch" class="w-6 h-6 cursor-pointer" />
+      <div class="flex items-center space-x-4">
+        <a href="#" class="text-gray-600 hover:text-gray-800" id="navHome">Home</a>
+        <a href="https://medium.com/@cem3_21762/app-update-progress-and-whats-coming-next-264f2b81ed0d" target="_blank" class="text-gray-600 hover:text-gray-800" id="navBlog">Blog</a>
+        <!-- Sprachumschalt-Button: ein feststehendes Bild -->
+        <a href="#" id="toggleLang" class="cursor-pointer">
+          <img id="toggleLangImg" src="https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg" alt="Deutsch" class="w-6 h-6" />
         </a>
       </div>
     </div>
@@ -155,6 +154,9 @@
 
     let currentLang = 'en';
 
+    // Verwende das feste Image-Element für die Sprachumschaltung
+    const toggleLangImg = document.getElementById('toggleLangImg');
+
     function setLanguage(lang) {
       currentLang = lang;
       document.getElementById('navHome').innerText = translations[lang].navHome;
@@ -178,13 +180,13 @@
       document.getElementById('footerText').innerHTML = translations[lang].footerText;
       document.getElementById('footerBlog').innerText = translations[lang].footerBlog;
       
-      // Sprachumschalt-Button: Wenn aktuell Englisch, dann zeige die deutsche Flagge (weil beim Klicken auf Deutsch gewechselt wird)
-      // Wenn aktuell Deutsch, dann zeige die amerikanische Flagge (weil beim Klicken auf Englisch gewechselt wird)
-      const toggleLang = document.getElementById('toggleLang');
+      // Sprachumschaltung: Zeige die Flagge der jeweils anderen Sprache
       if (lang === 'en') {
-        toggleLang.innerHTML = `<img src="${flagDe}" alt="Deutsch" class="w-6 h-6 cursor-pointer" />`;
+        toggleLangImg.src = flagDe;
+        toggleLangImg.alt = "Deutsch";
       } else {
-        toggleLang.innerHTML = `<img src="${flagEn}" alt="English" class="w-6 h-6 cursor-pointer" />`;
+        toggleLangImg.src = flagEn;
+        toggleLangImg.alt = "English";
       }
     }
 
