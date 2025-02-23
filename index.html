@@ -14,9 +14,9 @@
       <div class="flex items-center space-x-4">
         <a href="#" class="text-gray-600 hover:text-gray-800" id="navHome">Home</a>
         <a href="https://medium.com/@cem3_21762/app-update-progress-and-whats-coming-next-264f2b81ed0d" target="_blank" class="text-gray-600 hover:text-gray-800" id="navBlog">Blog</a>
-        <!-- Sprachumschalt-Button mit Composite-Flagge -->
+        <!-- Sprachumschalt-Button -->
         <a href="#" id="toggleLang" class="cursor-pointer">
-          <img id="toggleLangImg" src="https://via.placeholder.com/24x24.png?text=DE/US" alt="DE/US" class="w-6 h-6" />
+          <img id="toggleLangImg" src="" alt="Toggle Language" class="w-6 h-6" />
         </a>
       </div>
     </div>
@@ -101,9 +101,11 @@
 
   <!-- Language Toggle Script -->
   <script>
-    // Wir verwenden nun ein einziges Composite-Bild, das immer angezeigt wird
-    const compositeFlag = "https://via.placeholder.com/24x24.png?text=DE/US";
-    
+    // Flaggen-URLs
+    const flagDe = "https://flagcdn.com/24x18/de.png";
+    const flagEn = "https://flagcdn.com/24x18/us.png";
+
+    // Übersetzungen
     const translations = {
       en: {
         navHome: "Home",
@@ -153,8 +155,52 @@
 
     let currentLang = 'en';
 
+    // Aktualisiert den Toggle-Button, sodass die Flagge der Zielsprache angezeigt wird
+    function updateToggleButton() {
+      const toggleImg = document.getElementById('toggleLangImg');
+      toggleImg.src = currentLang === 'en' ? flagDe : flagEn;
+      toggleImg.alt = currentLang === 'en' ? "Switch to German" : "Switch to English";
+    }
+
+    // Setzt die Sprache und aktualisiert alle Textelemente
     function setLanguage(lang) {
       currentLang = lang;
       document.getElementById('navHome').innerText = translations[lang].navHome;
       document.getElementById('navBlog').innerText = translations[lang].navBlog;
-      document.getElementById('welcomeTitle').innerHTML = translati
+      document.getElementById('welcomeTitle').innerHTML = translations[lang].welcomeTitle;
+      document.getElementById('description').innerText = translations[lang].description;
+      document.getElementById('getStartedBtn').innerText = translations[lang].getStartedBtn;
+      document.getElementById('featuresHeading').innerText = translations[lang].featuresHeading;
+      document.getElementById('featuresListHeading').innerText = translations[lang].featuresListHeading;
+      document.getElementById('feature1').innerText = translations[lang].feature1;
+      document.getElementById('feature2Title').innerText = translations[lang].feature2Title;
+      document.getElementById('feature2_1').innerHTML = translations[lang].feature2_1;
+      document.getElementById('feature2_2').innerHTML = translations[lang].feature2_2;
+      document.getElementById('feature2_3').innerHTML = translations[lang].feature2_3;
+      document.getElementById('feature3').innerText = translations[lang].feature3;
+      document.getElementById('feature4').innerText = translations[lang].feature4;
+      document.getElementById('feature5').innerText = translations[lang].feature5;
+      document.getElementById('feature6').innerText = translations[lang].feature6;
+      document.getElementById('ctaHeading').innerText = translations[lang].ctaHeading;
+      document.getElementById('ctaText').innerText = translations[lang].ctaText;
+      document.getElementById('footerText').innerHTML = translations[lang].footerText;
+      document.getElementById('footerBlog').innerText = translations[lang].footerBlog;
+      updateToggleButton();
+    }
+
+    // Klick-Event für den Sprachumschalter
+    document.getElementById('toggleLang').addEventListener('click', function(e) {
+      e.preventDefault();
+      setLanguage(currentLang === 'en' ? 'de' : 'en');
+    });
+
+    // Setzt die Sprache basierend auf der Browsersprache (ohne Datenschutzprobleme)
+    const userLang = navigator.language || navigator.userLanguage;
+    if (userLang && userLang.startsWith("de")) {
+      setLanguage('de');
+    } else {
+      setLanguage('en');
+    }
+  </script>
+</body>
+</html>
