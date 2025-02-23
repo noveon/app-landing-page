@@ -8,11 +8,12 @@
   <style>
     /* Hängender Einzug für Feature-Listen, sodass mehrzeilige Einträge bündig beginnen */
     ul.feature-list {
-      list-style-position: outside;
+      list-style: disc outside;
+      margin-left: 1.5rem;
     }
     ul.feature-list li {
-      padding-left: 1rem;
-      text-indent: -1rem;
+      text-indent: -1.5rem;
+      margin-bottom: 0.5rem;
     }
   </style>
 </head>
@@ -24,12 +25,9 @@
       <div class="flex items-center">
         <a href="#" class="text-gray-600 hover:text-gray-800 mx-4" id="navHome">Home</a>
         <a href="https://medium.com/@cem3_21762/app-update-progress-and-whats-coming-next-264f2b81ed0d" target="_blank" class="text-gray-600 hover:text-gray-800 mx-4" id="navBlog">Blog</a>
-        <!-- Sprachumschaltung per Flaggen -->
-        <a href="#" id="lang-en" class="mx-2">
+        <!-- Sprachumschalt-Button: Es wird nur eine Flagge angezeigt -->
+        <a href="#" id="toggleLang" class="mx-4">
           <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="English" class="w-6 h-6 cursor-pointer" />
-        </a>
-        <a href="#" id="lang-de" class="mx-2">
-          <img src="https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg" alt="Deutsch" class="w-6 h-6 cursor-pointer" />
         </a>
       </div>
     </div>
@@ -72,11 +70,11 @@
         <!-- Right: Features List -->
         <div class="md:w-1/2 mt-6 md:mt-0 md:pl-10">
           <h3 id="featuresListHeading" class="text-2xl font-semibold text-gray-800 mb-4">Features & Capabilities</h3>
-          <ul class="feature-list text-gray-600 space-y-2">
+          <ul class="feature-list text-gray-600">
             <li id="feature1">Automatic 30-day reminders for item usage tracking.</li>
             <li>
               <span id="feature2Title">Inventory management with color-coded statuses:</span>
-              <ul class="feature-list ml-4 mt-2 space-y-1">
+              <ul class="feature-list ml-4 mt-2">
                 <li id="feature2_1"><span class="bg-green-200 px-1 py-0.5 rounded text-green-600">Green</span>: Regularly used items.</li>
                 <li id="feature2_2"><span class="bg-yellow-200 px-1 py-0.5 rounded text-yellow-600">Yellow</span>: Items needing attention.</li>
                 <li id="feature2_3"><span class="bg-red-200 px-1 py-0.5 rounded text-red-600">Red</span>: Items recommended for removal.</li>
@@ -114,6 +112,9 @@
 
   <!-- Language Toggle Script -->
   <script>
+    const flagEn = "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg";
+    const flagDe = "https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg";
+    
     const translations = {
       en: {
         navHome: "Home",
@@ -161,7 +162,10 @@
       }
     };
 
+    let currentLang = 'en';
+
     function setLanguage(lang) {
+      currentLang = lang;
       document.getElementById('navHome').innerText = translations[lang].navHome;
       document.getElementById('navBlog').innerText = translations[lang].navBlog;
       document.getElementById('welcomeTitle').innerHTML = translations[lang].welcomeTitle;
@@ -182,15 +186,19 @@
       document.getElementById('ctaText').innerText = translations[lang].ctaText;
       document.getElementById('footerText').innerHTML = translations[lang].footerText;
       document.getElementById('footerBlog').innerText = translations[lang].footerBlog;
+      
+      // Update toggle button image: Zeige die Flagge der aktiven Sprache
+      const toggleLang = document.getElementById('toggleLang');
+      if (lang === 'en') {
+        toggleLang.innerHTML = `<img src="${flagEn}" alt="English" class="w-6 h-6 cursor-pointer" />`;
+      } else {
+        toggleLang.innerHTML = `<img src="${flagDe}" alt="Deutsch" class="w-6 h-6 cursor-pointer" />`;
+      }
     }
 
-    document.getElementById('lang-en').addEventListener('click', function(e) {
+    document.getElementById('toggleLang').addEventListener('click', function(e) {
       e.preventDefault();
-      setLanguage('en');
-    });
-    document.getElementById('lang-de').addEventListener('click', function(e) {
-      e.preventDefault();
-      setLanguage('de');
+      setLanguage(currentLang === 'en' ? 'de' : 'en');
     });
 
     // Standardmäßig Englisch setzen
