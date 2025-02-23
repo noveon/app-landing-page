@@ -13,20 +13,19 @@
       <div class="text-xl font-bold text-gray-800">Minimalist App</div>
       <div>
         <a href="#" class="text-gray-600 hover:text-gray-800 mx-4">Home</a>
-        <!-- Blog Link zum Medium-Blog -->
         <a href="https://medium.com/@cem3_21762/app-update-progress-and-whats-coming-next-264f2b81ed0d" target="_blank" class="text-gray-600 hover:text-gray-800 mx-4">Blog</a>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section class="h-screen flex items-center justify-center p-6">
-    <div class="flex flex-col md:flex-row items-center justify-center w-full max-w-5xl mx-auto">
+  <section class="h-auto md:h-screen flex items-center justify-center p-6">
+    <div class="flex flex-col md:flex-row items-center justify-center w-full max-w-5xl mx-auto space-y-6 md:space-y-0">
       <!-- Left: Text Content (zentriert) -->
       <div class="md:w-1/2 text-center md:text-left">
-       <h1 class="text-4xl font-bold text-gray-800">
-  Welcome to <span class="bg-black text-white px-1 py-0.5 rounded">Minimalist</span> App
-</h1>
+        <h1 class="text-4xl font-bold text-gray-800">
+          Welcome to <span class="bg-black text-white px-1 py-0.5 rounded">Minimalist</span> App
+        </h1>
         <p class="text-lg text-gray-600 mt-4">
           The smart solution to embrace minimalism and live more mindfully.
         </p>
@@ -35,10 +34,10 @@
           Get Started
         </a>
       </div>
-      <!-- Right: Erstes Bild (40% größer als vorher, kein Rahmen, kein Schatten) -->
-      <div class="md:w-1/2 mt-6 md:mt-0 flex justify-center">
+      <!-- Right: Erstes Bild -->
+      <div class="md:w-1/2 flex justify-center">
         <img src="Simulator Screenshot - iPhone 16 Pro - 2025-02-23 at 11.28.04-left.png" 
-             alt="App Mockup" class="w-[93%] h-auto" />
+             alt="App Mockup" class="w-full max-w-sm md:w-[93%] h-auto" />
       </div>
     </div>
   </section>
@@ -47,14 +46,14 @@
   <section class="py-20 bg-white">
     <div class="container mx-auto px-6">
       <h2 class="text-3xl font-bold text-gray-800 text-center">Discover Our App</h2>
-      <div class="mt-10 flex flex-col md:flex-row items-center max-w-5xl mx-auto">
-        <!-- Left: Zweites Bild (30% größer, kein Rahmen, kein Schatten) -->
+      <div class="mt-10 flex flex-col md:flex-row items-center max-w-5xl mx-auto space-y-6 md:space-y-0">
+        <!-- Left: Zweites Bild -->
         <div class="md:w-1/2 flex justify-center">
           <img src="Simulator Screenshot - iPhone 16 Pro - 2025-02-23 at 11.28.04-portrait.png" 
-               alt="App Mockup" class="w-2/3 h-auto" />
+               alt="App Mockup" class="w-full max-w-xs md:w-2/3 h-auto" />
         </div>
         <!-- Right: Features List -->
-        <div class="md:w-1/2 mt-10 md:mt-0 md:pl-10">
+        <div class="md:w-1/2 mt-6 md:mt-0 md:pl-10">
           <h3 class="text-2xl font-semibold text-gray-800 mb-4">Features & Capabilities</h3>
           <ul class="list-disc list-inside text-gray-600 space-y-2">
             <li>Automatic 30-day reminders for item usage tracking.</li>
@@ -80,7 +79,7 @@
   <section id="signup" class="py-20 bg-blue-600 text-white text-center">
     <h2 class="text-3xl font-bold">Join the Beta!</h2>
     <p class="mt-4">Sign up and be the first to experience our app.</p>
-    <form action="https://formspree.io/f/meoewepq" method="POST" class="mt-6 flex justify-center flex-col items-center max-w-md mx-auto">
+    <form action="https://formspree.io/f/meoewepq" method="POST" class="mt-6 flex flex-col items-center max-w-md mx-auto">
       <input type="email" name="email" placeholder="Your Email" class="p-3 w-full rounded-lg text-gray-800 mb-4" required>
       <button type="submit" class="w-full px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-200">
         Sign Up
@@ -97,3 +96,4 @@
   </footer>
 </body>
 </html>
+
