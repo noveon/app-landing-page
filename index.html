@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minimalist App</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Keine speziellen CSS-Regeln für Bullet Points – normale Listen -->
 </head>
 <body class="bg-gray-100">
   <!-- Navigation -->
@@ -15,9 +14,9 @@
       <div class="flex items-center space-x-4">
         <a href="#" class="text-gray-600 hover:text-gray-800" id="navHome">Home</a>
         <a href="https://medium.com/@cem3_21762/app-update-progress-and-whats-coming-next-264f2b81ed0d" target="_blank" class="text-gray-600 hover:text-gray-800" id="navBlog">Blog</a>
-        <!-- Sprachumschalt-Button: ein feststehendes Bild -->
+        <!-- Sprachumschalt-Button mit Composite-Flagge -->
         <a href="#" id="toggleLang" class="cursor-pointer">
-          <img id="toggleLangImg" src="https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg" alt="Deutsch" class="w-6 h-6" />
+          <img id="toggleLangImg" src="https://via.placeholder.com/24x24.png?text=DE/US" alt="DE/US" class="w-6 h-6" />
         </a>
       </div>
     </div>
@@ -102,8 +101,8 @@
 
   <!-- Language Toggle Script -->
   <script>
-    const flagEn = "https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg";
-    const flagDe = "https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg";
+    // Wir verwenden nun ein einziges Composite-Bild, das immer angezeigt wird
+    const compositeFlag = "https://via.placeholder.com/24x24.png?text=DE/US";
     
     const translations = {
       en: {
@@ -154,49 +153,8 @@
 
     let currentLang = 'en';
 
-    // Verwende das feste Image-Element für die Sprachumschaltung
-    const toggleLangImg = document.getElementById('toggleLangImg');
-
     function setLanguage(lang) {
       currentLang = lang;
       document.getElementById('navHome').innerText = translations[lang].navHome;
       document.getElementById('navBlog').innerText = translations[lang].navBlog;
-      document.getElementById('welcomeTitle').innerHTML = translations[lang].welcomeTitle;
-      document.getElementById('description').innerText = translations[lang].description;
-      document.getElementById('getStartedBtn').innerText = translations[lang].getStartedBtn;
-      document.getElementById('featuresHeading').innerText = translations[lang].featuresHeading;
-      document.getElementById('featuresListHeading').innerText = translations[lang].featuresListHeading;
-      document.getElementById('feature1').innerText = translations[lang].feature1;
-      document.getElementById('feature2Title').innerText = translations[lang].feature2Title;
-      document.getElementById('feature2_1').innerHTML = translations[lang].feature2_1;
-      document.getElementById('feature2_2').innerHTML = translations[lang].feature2_2;
-      document.getElementById('feature2_3').innerHTML = translations[lang].feature2_3;
-      document.getElementById('feature3').innerText = translations[lang].feature3;
-      document.getElementById('feature4').innerText = translations[lang].feature4;
-      document.getElementById('feature5').innerText = translations[lang].feature5;
-      document.getElementById('feature6').innerText = translations[lang].feature6;
-      document.getElementById('ctaHeading').innerText = translations[lang].ctaHeading;
-      document.getElementById('ctaText').innerText = translations[lang].ctaText;
-      document.getElementById('footerText').innerHTML = translations[lang].footerText;
-      document.getElementById('footerBlog').innerText = translations[lang].footerBlog;
-      
-      // Sprachumschaltung: Zeige die Flagge der jeweils anderen Sprache
-      if (lang === 'en') {
-        toggleLangImg.src = flagDe;
-        toggleLangImg.alt = "Deutsch";
-      } else {
-        toggleLangImg.src = flagEn;
-        toggleLangImg.alt = "English";
-      }
-    }
-
-    document.getElementById('toggleLang').addEventListener('click', function(e) {
-      e.preventDefault();
-      setLanguage(currentLang === 'en' ? 'de' : 'en');
-    });
-
-    // Standardmäßig Englisch setzen
-    setLanguage('en');
-  </script>
-</body>
-</html>
+      document.getElementById('welcomeTitle').innerHTML = translati
