@@ -6,7 +6,7 @@
   <title>Minimalist App</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Kleiner CSS-Reset für die Flaggen im Umschalter */
+    /* Styles für den Sprachumschalter */
     #toggleLang {
       display: inline-flex;
       border: 1px solid #ccc;
@@ -17,6 +17,7 @@
       display: block;
       width: 24px;
       height: auto;
+      object-fit: contain;
     }
   </style>
 </head>
@@ -28,10 +29,10 @@
       <div class="flex items-center space-x-4">
         <a href="#" class="text-gray-600 hover:text-gray-800" id="navHome">Home</a>
         <a href="https://medium.com/@cem3_21762/app-update-progress-and-whats-coming-next-264f2b81ed0d" target="_blank" class="text-gray-600 hover:text-gray-800" id="navBlog">Blog</a>
-        <!-- Sprachumschalt-Button als zusammengesetzte Flagge -->
+        <!-- Sprachumschalt-Button als zusammengesetzte, flache Flagge -->
         <a href="#" id="toggleLang" class="cursor-pointer">
-          <img id="flagUS" src="https://flagcdn.com/24x18/us.png" alt="US Flag" />
-          <img id="flagDE" src="https://flagcdn.com/24x18/de.png" alt="German Flag" />
+          <img id="flagUS" src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg" alt="US Flag" />
+          <img id="flagDE" src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/de.svg" alt="German Flag" />
         </a>
       </div>
     </div>
@@ -55,7 +56,8 @@
       </div>
       <!-- Right: Erstes Bild -->
       <div class="md:w-1/2 flex justify-center">
-        <img src="Simulator Screenshot - iPhone 16 Pro - 2025-02-23 at 11.28.04-left.png" alt="App Mockup" class="w-full max-w-sm md:w-[93%] h-auto" />
+        <img src="Simulator Screenshot - iPhone 16 Pro - 2025-02-23 at 11.28.04-left.png" 
+             alt="App Mockup" class="w-full max-w-sm md:w-[93%] h-auto" />
       </div>
     </div>
   </section>
@@ -67,7 +69,8 @@
       <div class="mt-10 flex flex-col md:flex-row items-center max-w-5xl mx-auto space-y-6 md:space-y-0">
         <!-- Linkes Bild -->
         <div class="md:w-1/2 flex justify-center">
-          <img src="Simulator Screenshot - iPhone 16 Pro - 2025-02-23 at 11.28.04-portrait.png" alt="App Mockup" class="w-full max-w-xs md:w-2/3 h-auto" />
+          <img src="Simulator Screenshot - iPhone 16 Pro - 2025-02-23 at 11.28.04-portrait.png" 
+               alt="App Mockup" class="w-full max-w-xs md:w-2/3 h-auto" />
         </div>
         <!-- Rechte Features-Liste -->
         <div class="md:w-1/2 mt-6 md:mt-0 md:pl-10">
@@ -112,7 +115,7 @@
     </p>
   </footer>
 
-  <!-- Language Toggle Script mit zusammengesetzter Flagge -->
+  <!-- Language Toggle Script mit zusammengesetzter, flacher Flagge -->
   <script>
     const translations = {
       en: {
