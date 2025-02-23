@@ -19,22 +19,21 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="h-screen flex items-center justify-center p-6">
-    <div class="flex flex-col md:flex-row items-center justify-center w-full max-w-5xl mx-auto">
-      <!-- Left: Text Content -->
-      <div class="md:w-1/2 text-center md:text-left">
+  <section class="h-screen flex items-center justify-center text-center p-6">
+    <div class="flex flex-col md:flex-row items-center justify-center w-full max-w-4xl">
+      <!-- Text Column -->
+      <div class="w-full md:w-1/2 text-center">
         <h1 class="text-4xl font-bold text-gray-800">Welcome to Minimalist App</h1>
         <p class="text-lg text-gray-600 mt-4">
           The smart solution to embrace minimalism and live more mindfully.
         </p>
-        <button class="mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700">
+        <button class="mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700">
           Get Started
         </button>
       </div>
-      <!-- Right: First Image (Smaller & No Frame) -->
-      <div class="md:w-1/2 mt-6 md:mt-0 flex justify-center">
-        <img src="Simulator Screenshot - iPhone 16 Pro - 2025-02-23 at 11.28.04-left.png" 
-             alt="App Mockup" class="w-1/2 h-auto" />
+      <!-- Image Column -->
+      <div class="w-full md:w-1/2 mt-6 md:mt-0 flex justify-center">
+        <img src="Simulator Screenshot - iPhone 16 Pro - 2025-02-23 at 11.28.04-left.png" alt="App Mockup" class="w-32 h-auto" />
       </div>
     </div>
   </section>
@@ -43,15 +42,14 @@
   <section class="py-20 bg-white">
     <div class="container mx-auto px-6">
       <h2 class="text-3xl font-bold text-gray-800 text-center">Discover Our App</h2>
-      <div class="mt-10 flex flex-col md:flex-row items-center max-w-5xl mx-auto">
-        <!-- Left: Second Image (Smaller & No Frame) -->
-        <div class="md:w-1/2 flex justify-center">
-          <img src="Simulator Screenshot - iPhone 16 Pro - 2025-02-23 at 11.28.04-portrait.png" 
-               alt="App Mockup" class="w-1/2 h-auto" />
+      <div class="mt-10 flex flex-col md:flex-row items-center">
+        <!-- Image Column -->
+        <div class="w-full md:w-1/2 flex justify-center">
+          <img src="Simulator Screenshot - iPhone 16 Pro - 2025-02-23 at 11.28.04-portrait.png" alt="App Mockup" class="w-32 h-auto" />
         </div>
-        <!-- Right: Features List -->
-        <div class="md:w-1/2 mt-10 md:mt-0 md:pl-10">
-          <h3 class="text-2xl font-semibold text-gray-800 mb-4">Features & Capabilities</h3>
+        <!-- Features List Column -->
+        <div class="w-full md:w-1/2 mt-10 md:mt-0 md:pl-10">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Features & Capabilities</h3>
           <ul class="list-disc list-inside text-gray-600 space-y-2">
             <li>Automatic 30-day reminders for item usage tracking.</li>
             <li>
@@ -72,13 +70,48 @@
     </div>
   </section>
 
+  <!-- How It Works Section (Roadmap) -->
+  <section class="py-20 bg-gray-100">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-gray-800 text-center">How It Works</h2>
+      <div class="mt-10 max-w-4xl mx-auto text-gray-700">
+        <p class="mb-4">
+          Our app is designed to help you focus on what truly matters by tracking your items’ usage and prompting you at optimal intervals. Here's an overview:
+        </p>
+        <ul class="list-decimal list-inside space-y-2">
+          <li>
+            <strong>Initial Setup:</strong> Each item is added with a default 30-day reminder.
+          </li>
+          <li>
+            <strong>Usage Reminders:</strong> After 30 days, you receive a prompt asking, “Have you used [Item] in the last 30 days?”
+          </li>
+          <li>
+            <strong>Adaptive Intervals:</strong> Confirming usage increases the interval (e.g., from 30 to 60 days) and updates in the database.
+          </li>
+          <li>
+            <strong>Removal Prompts:</strong> After 90 days of non-use, a prompt asks if you’d like to remove the item. Keeping it resets the reminder; discarding it removes the item.
+          </li>
+          <li>
+            <strong>Automatic Flagging:</strong> At 100 days of non-use, the item is flagged for removal with a final prompt.
+          </li>
+          <li>
+            <strong>Inventory Overview:</strong> Items are color-coded (green, yellow, red) based on usage, with filtering options to help you focus on what matters.
+          </li>
+        </ul>
+        <p class="mt-4">
+          This system ensures you maintain a minimalist lifestyle by retaining only the items that are truly essential.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- Call to Action Section -->
   <section class="py-20 bg-blue-600 text-white text-center">
     <h2 class="text-3xl font-bold">Join the Beta!</h2>
     <p class="mt-4">Sign up and be the first to experience our app.</p>
     <form action="#" method="POST" class="mt-6 flex justify-center">
-      <input type="email" placeholder="Your Email" class="p-3 rounded-lg text-gray-800" required>
-      <button type="submit" class="ml-2 px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-gray-200">
+      <input type="email" placeholder="Your Email" class="p-3 rounded text-gray-800" required>
+      <button type="submit" class="ml-2 px-6 py-3 bg-white text-blue-600 font-semibold rounded hover:bg-gray-200">
         Sign Up
       </button>
     </form>
