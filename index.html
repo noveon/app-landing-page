@@ -5,17 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minimalist App</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Hängender Einzug für Feature-Listen, sodass mehrzeilige Einträge bündig beginnen */
-    ul.feature-list {
-      list-style: disc outside;
-      margin-left: 1.5rem;
-    }
-    ul.feature-list li {
-      text-indent: -1.5rem;
-      margin-bottom: 0.5rem;
-    }
-  </style>
+  <!-- Keine zusätzlichen Listeneinstellungen mehr – normale Bullet-Points -->
 </head>
 <body class="bg-gray-100">
   <!-- Navigation -->
@@ -25,9 +15,10 @@
       <div class="flex items-center">
         <a href="#" class="text-gray-600 hover:text-gray-800 mx-4" id="navHome">Home</a>
         <a href="https://medium.com/@cem3_21762/app-update-progress-and-whats-coming-next-264f2b81ed0d" target="_blank" class="text-gray-600 hover:text-gray-800 mx-4" id="navBlog">Blog</a>
-        <!-- Sprachumschalt-Button: Es wird nur eine Flagge angezeigt -->
+        <!-- Sprachumschalt-Button: Es wird jeweils die Flagge der Zielsprache angezeigt -->
         <a href="#" id="toggleLang" class="mx-4">
-          <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="English" class="w-6 h-6 cursor-pointer" />
+          <!-- Standardmäßig ist die Website auf Englisch, also zeigen wir die deutsche Flagge -->
+          <img src="https://upload.wikimedia.org/wikipedia/en/b/ba/Flag_of_Germany.svg" alt="Deutsch" class="w-6 h-6 cursor-pointer" />
         </a>
       </div>
     </div>
@@ -70,11 +61,11 @@
         <!-- Right: Features List -->
         <div class="md:w-1/2 mt-6 md:mt-0 md:pl-10">
           <h3 id="featuresListHeading" class="text-2xl font-semibold text-gray-800 mb-4">Features & Capabilities</h3>
-          <ul class="feature-list text-gray-600">
+          <ul class="list-disc list-inside text-gray-600">
             <li id="feature1">Automatic 30-day reminders for item usage tracking.</li>
             <li>
               <span id="feature2Title">Inventory management with color-coded statuses:</span>
-              <ul class="feature-list ml-4 mt-2">
+              <ul class="list-disc list-inside ml-6 mt-2">
                 <li id="feature2_1"><span class="bg-green-200 px-1 py-0.5 rounded text-green-600">Green</span>: Regularly used items.</li>
                 <li id="feature2_2"><span class="bg-yellow-200 px-1 py-0.5 rounded text-yellow-600">Yellow</span>: Items needing attention.</li>
                 <li id="feature2_3"><span class="bg-red-200 px-1 py-0.5 rounded text-red-600">Red</span>: Items recommended for removal.</li>
@@ -187,12 +178,13 @@
       document.getElementById('footerText').innerHTML = translations[lang].footerText;
       document.getElementById('footerBlog').innerText = translations[lang].footerBlog;
       
-      // Update toggle button image: Zeige die Flagge der aktiven Sprache
+      // Sprachumschalt-Button: Wenn aktuell Englisch, dann zeige die deutsche Flagge (weil beim Klicken auf Deutsch gewechselt wird)
+      // Wenn aktuell Deutsch, dann zeige die amerikanische Flagge (weil beim Klicken auf Englisch gewechselt wird)
       const toggleLang = document.getElementById('toggleLang');
       if (lang === 'en') {
-        toggleLang.innerHTML = `<img src="${flagEn}" alt="English" class="w-6 h-6 cursor-pointer" />`;
-      } else {
         toggleLang.innerHTML = `<img src="${flagDe}" alt="Deutsch" class="w-6 h-6 cursor-pointer" />`;
+      } else {
+        toggleLang.innerHTML = `<img src="${flagEn}" alt="English" class="w-6 h-6 cursor-pointer" />`;
       }
     }
 
